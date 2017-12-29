@@ -1,0 +1,22 @@
+{
+    "name": "broker",
+    "description": "商家客户实时沟通代码",
+    "keywords": ["broker", "chat", "customer"],
+    "type": "project",
+    "require": {
+        "php": ">=7.0",
+        "vlucas/phpdotenv": ">=2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dotenv\\": "vendor/vlucas/phpdotenv/src/",
+            "core\\": "core/",
+            "apps\\": "apps/",
+            "protocols\\": "protocols"
+        }
+    },
+    "repositories": [
+        {"type": "composer", "url": "http://packagist.phpcomposer.com"},
+        {"packagist": false}
+    ]
+}
