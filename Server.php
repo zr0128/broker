@@ -29,10 +29,10 @@ class Server
             foreach ($users as $k => $serializeUser) { // 初始化用户列表（服务重启的情况下）
                 $user = unserialize($serializeUser);
                 if (is_a($user, \core\User::class)) {
-                    //if (is_null($user->id)) {
+                    if (is_null($user->id)) {
                         $redis->hDel(\core\User::USERS_HASH_KEY, $k);
                         continue;
-                    //}
+                    }
                     \core\Session::getInstance()->saveUser($user->id, $serializeUser);
                 }
             }
